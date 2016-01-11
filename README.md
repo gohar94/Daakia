@@ -27,6 +27,7 @@ I couldn't find a *free/painless* utility to download e-mails from an *Outlook W
 ### Who will use?
 A typical use case would be for backing up e-mails from expiring accounts on university/enterprise web servers. I have tried this for accounts of the following domains:
 * xyz@lse.ac.uk
+* abc@lums.edu.pk
 
 ### Tested?
 It has been *barely tested* a couple of times for an inbox size of about 6000 mails. :neutral_face:
