@@ -1,6 +1,8 @@
 # Daakia
 Open-source e-mail backup utility from POP Servers. Bare minimum features. :envelope: :mailbox: :postbox:
 
+![ScreenShot](https://cloud.githubusercontent.com/assets/6470801/12240596/349969f0-b8b0-11e5-928f-7cffc2fc7b6e.png)
+
 ## Installation?
 LOL NO. Got Python 2 or above? You're good to go.
 
@@ -17,6 +19,7 @@ For more/better details:
 ```
 python daakia.py --help
 ```
+![ScreenShot](https://cloud.githubusercontent.com/assets/6470801/12240570/0c7c15bc-b8b0-11e5-9834-6045e752333d.png)
 
 ### Why the need?
 I couldn't find a *free/painless* utility to download e-mails from an *Outlook Web App (OWA)* http://office365.com/owa/ account so I wrote this crude script to do the job. 
