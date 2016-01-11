@@ -78,10 +78,14 @@ def fetch(server, email, password, directory, number):
 				fp.write("From: " + message['from'] + "\n")
 				fp.write("Subject: " + message['subject'] + "\n")
 				fp.write("Contents: \n")
-				fp.write(part.get_payload())
+				payload = part.get_payload()
+				if payload:
+					fp.write(payload)
 			else:
 				counter += 1
-				fp.write(part.get_payload(decode=True))
+				payload = part.get_payload(decode=True)
+				if payload:
+					fp.write(payload)
 			fp.close()
 	popConn.quit()
 
