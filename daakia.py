@@ -91,17 +91,6 @@ def fetch(server, email, password, directory, number):
 			fp.close()
 	popConn.quit()
 
-def write_to_file(message):
-	directory = message['date']
-	if not os.path.exists(directory):
-		os.makedirs(directory)
-	filename = message['from']
-	"".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-	filename = directory + "/" + filename + ".txt"
-	file = open(filename, "w")
-	file.write(message['_payload'])
-	file.close()
-
 if __name__ == "__main__":
 	optParser = ArgumentParser(description="""Open-source e-mail backup utility from POP Servers. Bare minimum features.""")
 	optParser.add_argument('-d', '--directory', required=True, help="""Unpack the messages into the named directory, which will be created if it doesn't already exist.""")
