@@ -13,6 +13,8 @@ Example usage:
 ```
 python daakia.py -d mails -s outlook.office365.com -e some_weirdo@lse.ac.uk -p godhelpMEe666
 ```
+For more/better details:
+```
 python daakia.py --help
 ```
 
