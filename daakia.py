@@ -104,4 +104,4 @@ if __name__ == "__main__":
 			raise
     
 	fetch(args.server, args.email, args.password, args.directory, args.number)
-	print "All done."
+	print "\nAll done."
