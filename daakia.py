@@ -20,12 +20,14 @@ from optparse import OptionParser
 poplib._MAXLINE=20480
 
 def fetch(server, email, password, directory, number):
+	print "Logging in, please wait..."
 	popConn = poplib.POP3_SSL(server)
 	popConn.user(email)
 	popConn.pass_(password)
 
 	#Get messages from server:
 	print "Number of mails in the inbox = " + str(len(popConn.list()[1]))
+	print "Starting download..."
 	
 	if number == -1:
 		number = len(popConn.list()[1])
@@ -80,11 +82,11 @@ def fetch(server, email, password, directory, number):
 				filename = 'part-%03d%s' % (counter, ext)
 
 			fp = open(os.path.join(directory+"/"+foldername, filename), 'wb')
-			
+			fpInfo = open(os.path.join(directory+"/"+foldername, "email_metadata.txt"), 'wb')
+			fpInfo.write("From: " + message['from'] + "\n")
+			fpInfo.write("Subject: " + message['subject'] + "\n")
+			fpInfo.write("Date: " + message['date'] + "\n")
 			if part.get_content_type() == 'text/plain':
-				fp.write("From: " + message['from'] + "\n")
-				fp.write("Subject: " + message['subject'] + "\n")
-				fp.write("Contents: \n")
 				payload = part.get_payload()
 				if payload:
 					fp.write(payload)
@@ -94,6 +96,7 @@ def fetch(server, email, password, directory, number):
 				if payload:
 					fp.write(payload)
 			fp.close()
+			fpInfo.close()
 	popConn.quit()
 
 if __name__ == "__main__":
