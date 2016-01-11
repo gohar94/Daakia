@@ -6,6 +6,9 @@ Open-source e-mail backup utility from POP Servers. Bare minimum features. :enve
 ## Installation?
 LOL NO. Got Python 2 or above? You're good to go.
 
+## Compatibility?
+I have tested it on Linux and OSX, works on both. Windows etc. still need testing; their **might** be a problem of directory structures/paths which needs fixing.
+
 ## Usage?
 Enter the **directory name (-d)** to save the emails in, the **URL of the POP server (-s)**, your **e-mail address (-e)** and **your password (-p)**. *Optionally*, you can also give a **(-n) number of e-mails** from the first e-mail that you want to fetch, in case you don't want to fetch all the e-mails in your inbox.
 ```
