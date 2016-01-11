@@ -103,7 +103,7 @@ def write_to_file(message):
 	file.close()
 
 if __name__ == "__main__":
-	optParser = ArgumentParser(description="""Unpack a MIME message into a directory of files.""")
+	optParser = ArgumentParser(description="""Open-source e-mail backup utility from POP Servers. Bare minimum features.""")
 	optParser.add_argument('-d', '--directory', required=True, help="""Unpack the messages into the named directory, which will be created if it doesn't already exist.""")
 	optParser.add_argument('-s', '--server', required=True, help="""Contact the given POP server to fetch the emails from.""")
 	optParser.add_argument('-e', '--email', required=True, help="""Email address to download Inbox from.""")
