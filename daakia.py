@@ -29,22 +29,21 @@ def fetch(server, email, password, directory, number):
 	
 	messages = []
 
-	print "Fetching mails..."
+	print "Fetching and saving mails..."
 	for i in range(1, number+1):
 		percentage = int((i*100/number))
 		sys.stdout.write('\r')
 		sys.stdout.write("[%-100s] %d%%" % ('='*percentage, percentage))
 		sys.stdout.flush()
-		messages.append(popConn.retr(i))
+		message = popConn.retr(i)
+		messages.append(message)
 	
-	print "\nMailed fetched. Saving.\n"
-	# Concat message pieces:
-	messages = ["\n".join(mssg[1]) for mssg in messages]
+		# Concat message pieces:
+		message = "\n".join(message[1])
 
-	#Parse message into an email object:
-	messages = [parser.Parser().parsestr(mssg) for mssg in messages]
+		#Parse message into an email object:
+		message = parser.Parser().parsestr(message)
 
-	for message in messages:
 		counter = 1
 		for part in message.walk():
 			# multipart/* are just containers
@@ -53,15 +52,13 @@ def fetch(server, email, password, directory, number):
 			
 			foldername = message['date']
 			"".join([c for c in foldername if c.isalpha() or c.isdigit() or c == ' ']).rstrip()
-			print foldername
 
 			createDir = directory+"/"+foldername
 			try:
 				os.mkdir(createDir)
-				print("Directory created = " + os.getcwd() + "/" + createDir)
 			except OSError as e:
 				if e.errno == errno.EEXIST:
-					print("Directory not created, it already exists = " + os.getcwd() + "/" + createDir)
+					pass
 				else:
 					raise
 
@@ -76,7 +73,6 @@ def fetch(server, email, password, directory, number):
 				filename = 'part-%03d%s' % (counter, ext)
 
 			fp = open(os.path.join(directory+"/"+foldername, filename), 'wb')
-			print filename
 			
 			if part.get_content_type() == 'text/plain':
 				fp.write("From: " + message['from'] + "\n")
@@ -86,8 +82,6 @@ def fetch(server, email, password, directory, number):
 			else:
 				counter += 1
 				fp.write(part.get_payload(decode=True))
-
-			print "\n"
 			fp.close()
 	popConn.quit()
 
