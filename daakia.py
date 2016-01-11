@@ -38,7 +38,11 @@ def fetch(server, email, password, directory, number):
 		sys.stdout.write('\r')
 		sys.stdout.write("[%-100s] %d%%" % ('='*percentage, percentage))
 		sys.stdout.flush()
-		message = popConn.retr(i)
+		try:
+			message = popConn.retr(i)
+		except:
+			continue
+
 		messages.append(message)
 	
 		# Concat message pieces:
