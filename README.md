@@ -31,4 +31,4 @@ It has been *barely tested* a couple of times for an inbox size of about 6000 ma
 ### Feedback/Contact
 Don't hesitate to throw in your own code or feedback on this junk.
 
-:email: goharirfan94 [at] gmail [dot] com :neck_beard:
+:email: goharirfan94 [at] gmail [dot] com :neckbeard:
