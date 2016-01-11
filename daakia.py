@@ -7,6 +7,7 @@ Date: 11th January 2016
 """
 import thread
 import poplib
+import poplib
 import os
 import sys
 import math
@@ -15,6 +16,8 @@ import mimetypes
 from email import parser
 from argparse import ArgumentParser
 from optparse import OptionParser
+
+poplib._MAXLINE=20480
 
 def fetch(server, email, password, directory, number):
 	popConn = poplib.POP3_SSL(server)
