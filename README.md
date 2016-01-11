@@ -31,6 +31,9 @@ A typical use case would be for backing up e-mails from expiring accounts on uni
 ### Tested?
 It has been *barely tested* a couple of times for an inbox size of about 6000 mails. :neutral_face:
 
+### Possible improvements?
+This is single-threaded; downloads all e-mails serially. Will make it multi-threaded to speed things up.
+
 ### Feedback/Contact
 Don't hesitate to throw in your own code or feedback on this junk.
 
