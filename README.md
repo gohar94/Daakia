@@ -4,7 +4,7 @@ Open-source e-mail backup utility from POP Servers. Bare minimum features. :enve
 ![ScreenShot](https://cloud.githubusercontent.com/assets/6470801/12240596/349969f0-b8b0-11e5-928f-7cffc2fc7b6e.png)
 
 ## Installation?
-LOL NO. Got Python 2 or above? You're good to go.
+Got Python 2 or above? You're good to go.
 
 ## Compatibility?
 I have tested it on Linux and OSX, works on both. Windows etc. still need testing; there **might** be a problem of directory structures/paths which needs fixing.
@@ -39,6 +39,4 @@ It has been *barely tested* a couple of times for an inbox size of about 6000 ma
 This is single-threaded; downloads all e-mails serially. Will make it multi-threaded to speed things up.
 
 ### Feedback/Contact
-Don't hesitate to throw in your own code or feedback on this junk.
-
 :email: goharirfan94 [at] gmail [dot] com :neckbeard:
